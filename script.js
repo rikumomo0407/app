@@ -38,6 +38,19 @@ fetch('https://raw.githubusercontent.com/rikuto-dev/app/main/AppData.json')
     const appId = appInfo.id;
     const subtitle = appInfo.subtitle;
     const title = appInfo.title;
+      const appName = appInfo.name;
+
+      // kashikaricho部分をnameで置換（class対応）
+      const linkClassMap = [
+        { className: "tos-link", path: "ToS" },
+        { className: "pp-link", path: "PP" },
+        { className: "qa-link", path: "QA" }
+      ];
+      linkClassMap.forEach(link => {
+        document.querySelectorAll(`.${link.className}`).forEach(el => {
+          el.href = `https://rikuto-dev.github.io/app/${appName}/${link.path}`;
+        });
+      });
     // サブタイトル
     if (subtitle && document.getElementById("app-subtitle")) {
       document.getElementById("app-subtitle").textContent = subtitle;
