@@ -47,7 +47,8 @@ fetch('https://raw.githubusercontent.com/rikuto-dev/app/main/AppData.json')
     const description = appInfo.description || "";
     const iconUrl = `https://rikuto-dev.github.io/app/${appName}/icon.png`;
 
-    // kashikaricho部分をnameで置換（class対応）
+    // ToS, PP, QAのリンクを https://{AppDataのname}.netlify.app/{AppDataのid}/ToS の形式に変更
+    const appId = appInfo.id;
     const linkClassMap = [
       { className: "tos-link", path: "ToS" },
       { className: "pp-link", path: "PP" },
@@ -55,7 +56,7 @@ fetch('https://raw.githubusercontent.com/rikuto-dev/app/main/AppData.json')
     ];
     linkClassMap.forEach(link => {
       document.querySelectorAll(`.${link.className}`).forEach(el => {
-        el.href = `https://rikuto-dev.github.io/app/${appName}/${link.path}`;
+        el.href = `https://${appName}.netlify.app/${appId}/${link.path}`;
       });
     });
 
