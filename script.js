@@ -87,9 +87,18 @@ fetch('https://raw.githubusercontent.com/rikuto-dev/app/main/AppData.json')
       appleIconLink.setAttribute('sizes', '180x180');
     }
 
+
     // description の \n を <br> に置換
     const formattedDescription = description.replace(/\n/g, "<br>");
     document.getElementById("app-description").innerHTML = formattedDescription;
+
+    // App StoreリンクをAppDataのidから自動生成し、app-store-linkに設定
+    const appStoreUrl = `https://apps.apple.com/jp/app/id${appId}`;
+    const appStoreLinkEl = document.getElementById("app-store-link");
+    if (appStoreLinkEl) {
+      appStoreLinkEl.href = appStoreUrl;
+      appStoreLinkEl.target = "_blank";
+    }
 
 
     // GoogleフォームのリンクをAppDataのtitleを含む形で生成し、お問い合わせリンクに設定
