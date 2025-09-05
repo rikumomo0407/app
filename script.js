@@ -91,9 +91,15 @@ fetch('https://raw.githubusercontent.com/rikuto-dev/app/main/AppData.json')
     const formattedDescription = description.replace(/\n/g, "<br>");
     document.getElementById("app-description").innerHTML = formattedDescription;
 
-    // App Storeリンク（AppData.jsonにappStoreUrlがあれば使う。なければ#）
-    const appStoreUrl = appInfo.appStoreUrl || "#";
-    document.getElementById("app-store-link").href = appStoreUrl;
+
+    // GoogleフォームのリンクをAppDataのtitleを含む形で生成し、お問い合わせリンクに設定
+    const googleFormBase = "https://docs.google.com/forms/d/e/1FAIpQLSewR0cNPgqu8NdOb4PJG2WGauSldNgA76yR6UaNc0p6CoS4Sg/viewform?usp=pp_url";
+    const googleFormUrl = `${googleFormBase}&entry.1818123002=%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%81%94%E6%84%8F%E8%A6%8B%E3%83%BB%E3%81%94%E8%B3%AA%E5%95%8F&entry.1207451523=${encodeURIComponent(title)}`;
+      // お問い合わせリンク（a.contact-linkタグ）をすべて書き換え
+      document.querySelectorAll('a.contact-link').forEach(el => {
+        el.href = googleFormUrl;
+        el.target = "_blank";
+      });
 
     // link要素の自動設定
     // canonical
