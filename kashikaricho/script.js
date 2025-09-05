@@ -22,17 +22,23 @@ fetch('https://raw.githubusercontent.com/rikuto-dev/app/main/AppData.json')
     return response.json();
   })
   .then(appData => {
-    const urlAppId = getAppIdFromUrl();
+    // Netlifyのサブドメイン部分（***.netlify.appの***）を取得
+    const host = window.location.hostname;
+    let subdomain = null;
+    const netlifyMatch = host.match(/^([^.]+)\.netlify\.app$/);
+    if (netlifyMatch) {
+      subdomain = netlifyMatch[1];
+    }
     let appInfo = null;
-    if (urlAppId) {
-      appInfo = appData.apps.find(app => app.id === urlAppId);
+    if (subdomain) {
+      appInfo = appData.apps.find(app => app.name === subdomain);
       if (!appInfo) {
-        showErrorPage('指定されたアプリIDのデータが見つかりません。');
+        showErrorPage('指定されたアプリ名のデータが見つかりません。');
         return;
       }
     } else {
-        showErrorPage('アプリIDが指定されていません。');
-        return;
+      showErrorPage('アプリ名が取得できません。');
+      return;
     }
 
     const appName = appInfo.name;
