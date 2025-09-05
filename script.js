@@ -1,5 +1,3 @@
-
-
 // URLパラメータからidを取得
 function getAppIdFromUrl() {
   const params = new URLSearchParams(window.location.search);
@@ -115,6 +113,12 @@ fetch('https://raw.githubusercontent.com/rikuto-dev/app/main/AppData.json')
     const canonicalLink = document.querySelector('link[rel="canonical"]');
     if (canonicalLink) {
       canonicalLink.href = window.location.href;
+    }
+
+    // フッター
+    const copyrightEl = document.getElementById("footer-copyright");
+    if (copyrightEl) {
+      copyrightEl.innerHTML = `© Copyright 2025 ${appName} All rights reserved.`;
     }
 
     // 必要なmetaタグを動的に追加
