@@ -24,8 +24,8 @@ body{
 }
 
 .mode-light{
-    --bg-color: #5cbae2;
-    --bg-header-color: rgb(92, 186, 226, 0.5);
+    --bg-color: #60c7f3;
+    --bg-header-color: rgb(96, 199, 243, 0.5);
     --bg-index-color: rgba(100, 100, 100, 0.5);
     --bg-bubble-color: #fff;
     --bg-filter-uncheck-color: rgba(232, 231, 255, 0.5);
