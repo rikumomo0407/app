@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes"> 
+    <script type="module">
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="canonical" href="">
+    <link rel="icon" href=""/>
+    <link rel="apple-touch-icon" href=""/>
+    <meta name="theme-color" content="#FFFFFF">
+</head>
+<body>
+    <script src="./menu.js"></script>
+    <header>
+        <div id="menu">
+            <input type="checkbox" id="menu-button">
+            <label id="menu-label" for="menu-button">
+                <div id="usericon"><img class="app-icon" src="icon.png" alt="App Icon"></div>
+                <div id="username" class="app-title"></div>
+            </label>
+            <div id="index">
+                <ul>
+                    <li><a href="#app-info">TOP</a></li>
+                        <li><a class="tos-link" href="ToS">利用規約</a></li>
+                        <li><a class="pp-link" href="PP">プライバシーポリシー</a></li>
+                        <li><a class="qa-link" href="QA">ヘルプ・よくある質問</a></li>
+                    <li><a href="contact">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="darkmode">
+            <script src="./darkmode.js"></script>
+            <input type="checkbox" id="mode-button">
+            <label id="rotate" for="mode-button"></label>
+        </div>
+    </header>
+    <div id="app-info">
+        <img id="main-icon" class="app-icon" src="" alt="App Icon">
+        <div>
+            <div id="main-title" class="app-title"></div>
+            <div id="app-subtitle" class="app-subtitle"></div>
+            <div class="app-store-badge">
+                <a id="app-store-link" href="#" target="_blank">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                </a>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="app-description" class="app-description"></div>
+    <hr>
+    <div id="links">
+    <div><a class="tos-link" href="">利用規約</a></div>
+    <div><a class="pp-link" href="">プライバシーポリシー</a></div>
+    <div><a class="qa-link" href="">ヘルプ・よくある質問</a></div>
+        <div><a href="">お問い合わせ</a></div>
+    </div>
+    <footer>
+        <p>© Copyright 2025 rikuto.dev All rights reserved.</p>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
