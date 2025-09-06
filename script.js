@@ -44,7 +44,7 @@ fetch('https://raw.githubusercontent.com/rikuto-dev/app/main/AppData.json')
     const subtitle = appInfo.subtitle;
     const title = appInfo.title;
     const description = appInfo.description || "";
-    const iconUrl = `https://rikuto-dev.github.io/app/${appId}/icon.png`;
+    const iconUrl = `https://raw.githubusercontent.com/rikuto-dev/app/${appId}/icon.png`;
 
     // ToS, PP, QAのリンクを https://{AppDataのname}.netlify.app/{AppDataのid}/ToS の形式に変更
     const linkClassMap = [
